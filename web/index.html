@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  Versão web do painel (stlite): o Streamlit roda dentro do navegador, sem servidor Python.
+  Dados: NASA C-MAPSS FD001, simulados e públicos (não são dados da GE).
+  Os arquivos src/04_painel.py e dados/motores.db são gerados por src/exportar_web.py.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitor de motores turbofan</title>
+  <meta name="description" content="Manutenção preditiva de motores turbofan com dados simulados e públicos da NASA (C-MAPSS).">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.10.0/build/stlite.css">
+  <style>
+    body { margin: 0; background: #fcfcfb; color: #0b0b0b; font-family: system-ui, sans-serif; }
+    .carregando { max-width: 560px; margin: 18vh auto 0; padding: 0 16px; text-align: center; line-height: 1.5; }
+    .carregando small { color: #52514e; }
+  </style>
+</head>
+<body>
+  <!-- Mensagem exibida até o stlite terminar de carregar; depois ele substitui o conteúdo -->
+  <div id="root">
+    <div class="carregando">
+      <p>✈️ <strong>Carregando o painel...</strong></p>
+      <small>O Python está sendo baixado e executado no seu navegador.<br>
+      Na primeira visita isso leva de 15 a 30 segundos.</small>
+    </div>
+  </div>
+
+  <script type="module">
+    import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.10.0/build/stlite.js";
+
+    mount(
+      {
+        // Bibliotecas que o painel importa (o stlite já traz o Streamlit).
+        // No Pyodide, o sqlite3 não vem embutido no Python: é um pacote separado.
+        requirements: ["pandas", "altair", "sqlite3"],
+        // Equivale a "streamlit run src/04_painel.py"
+        entrypoint: "src/04_painel.py",
+        // Arquivos copiados para o sistema de arquivos virtual do Python no navegador,
+        // nos mesmos caminhos do projeto, para o painel achar o banco em dados/motores.db
+        files: {
+          "src/04_painel.py": { url: "./src/04_painel.py" },
+          "dados/motores.db": { url: "./dados/motores.db" },
+          ".streamlit/config.toml": { url: "./streamlit-config.toml" },
+        },
+      },
+      document.getElementById("root"),
+    );
+  </script>
+</body>
+</html>

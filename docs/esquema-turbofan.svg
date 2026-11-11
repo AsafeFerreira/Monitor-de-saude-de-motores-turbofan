@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#0f172a"/>
+  <text x="500" y="38" fill="#e2e8f0" font-size="22" font-weight="700" text-anchor="middle">Motor turbofan: onde ficam os sensores do C-MAPSS</text>
+  <text x="500" y="62" fill="#94a3b8" font-size="13" text-anchor="middle">Esquema simplificado (fora de escala). O ar entra pela esquerda e sai pela direita.</text>
+
+  <!-- carenagem externa -->
+  <path d="M90,120 L820,150 L900,200 L900,320 L820,370 L90,400 Z" fill="none" stroke="#475569" stroke-width="3"/>
+  <!-- duto de bypass (linha interna) -->
+  <path d="M250,175 L800,195 L800,325 L250,345" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="520" y="168" fill="#64748b" font-size="12" text-anchor="middle">ar de bypass (passa por fora do núcleo)</text>
+
+  <!-- eixo -->
+  <rect x="150" y="254" width="700" height="12" rx="6" fill="#334155"/>
+
+  <!-- Fan -->
+  <g>
+    <rect x="130" y="130" width="70" height="260" rx="10" fill="#38bdf8" opacity=".85"/>
+    <text x="165" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">Fan</text>
+  </g>
+  <!-- LPC -->
+  <rect x="260" y="200" width="80" height="120" rx="8" fill="#22d3ee" opacity=".85"/>
+  <text x="300" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">LPC</text>
+  <text x="300" y="438" fill="#94a3b8" font-size="11" text-anchor="middle">compressor de baixa</text>
+  <!-- HPC -->
+  <rect x="360" y="210" width="110" height="100" rx="8" fill="#a855f7" opacity=".9"/>
+  <text x="415" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">HPC</text>
+  <text x="415" y="438" fill="#94a3b8" font-size="11" text-anchor="middle">compressor de alta</text>
+  <!-- Combustor -->
+  <rect x="490" y="205" width="90" height="110" rx="30" fill="#f97316" opacity=".9"/>
+  <text x="535" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">Câmara</text>
+  <text x="535" y="438" fill="#94a3b8" font-size="11" text-anchor="middle">de combustão</text>
+  <!-- HPT -->
+  <rect x="600" y="210" width="70" height="100" rx="8" fill="#ef4444" opacity=".9"/>
+  <text x="635" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">HPT</text>
+  <text x="635" y="438" fill="#94a3b8" font-size="11" text-anchor="middle">turbina de alta</text>
+  <!-- LPT -->
+  <rect x="690" y="195" width="90" height="130" rx="8" fill="#f43f5e" opacity=".8"/>
+  <text x="735" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">LPT</text>
+  <text x="735" y="438" fill="#94a3b8" font-size="11" text-anchor="middle">turbina de baixa</text>
+  <!-- Bocal -->
+  <text x="860" y="420" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">Bocal</text>
+
+  <!-- marcadores de sensores -->
+  <g font-size="12" fill="#fde047">
+    <circle cx="115" cy="260" r="7" fill="#fde047"/><text x="60" y="235">T2 · P2</text>
+    <circle cx="230" cy="150" r="7" fill="#fde047"/><text x="205" y="112">P15 · Nf</text>
+    <circle cx="350" cy="260" r="7" fill="#fde047"/><text x="318" y="190">T24</text>
+    <circle cx="480" cy="260" r="7" fill="#fde047"/><text x="430" y="190">T30 · P30 · Ps30</text>
+    <circle cx="415" cy="330" r="7" fill="#fde047"/><text x="390" y="356">Nc</text>
+    <circle cx="590" cy="330" r="7" fill="#fde047"/><text x="560" y="356">phi · farB</text>
+    <circle cx="790" cy="260" r="7" fill="#fde047"/><text x="760" y="190">T50</text>
+    <circle cx="650" cy="330" r="7" fill="#fde047"/><text x="640" y="372">W31 · W32</text>
+  </g>
+
+  <!-- legenda -->
+  <text x="40" y="478" fill="#94a3b8" font-size="12">T = temperatura · P/Ps = pressão · Nf/Nc = rotação do fan e do núcleo · phi/farB = combustível · W31/W32 = ar de refrigeração das turbinas</text>
+  <text x="40" y="498" fill="#64748b" font-size="11">Fonte dos nomes dos sensores: documentação do conjunto C-MAPSS (Saxena e Goebel, NASA Ames, 2008). Desenho original deste projeto.</text>
+</svg>

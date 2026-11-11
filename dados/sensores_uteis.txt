@@ -1,0 +1,14 @@
+t24_temp_saida_lpc
+t30_temp_saida_hpc
+t50_temp_saida_lpt
+p30_pressao_saida_hpc
+nf_rotacao_fan
+nc_rotacao_nucleo
+ps30_pressao_estatica_hpc
+phi_razao_combustivel_ps30
+nrf_rotacao_fan_corrigida
+nrc_rotacao_nucleo_corrigida
+bpr_razao_bypass
+htbleed_entalpia_sangria
+w31_sangria_refrigeracao_hpt
+w32_sangria_refrigeracao_lpt

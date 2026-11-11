@@ -1,0 +1,14 @@
+# Configuração do Streamlit para este projeto (lida automaticamente ao rodar o painel)
+
+[server]
+port = 8501             # endereço: http://localhost:8501
+
+[browser]
+gatherUsageStats = false  # não envia estatísticas de uso para o Streamlit
+
+[theme]
+base = "light"
+primaryColor = "#2a78d6"  # azul usado nos gráficos e nos sliders
+
+[client]
+toolbarMode = "viewer"    # esconde o botão "Deploy" e o menu de desenvolvedor

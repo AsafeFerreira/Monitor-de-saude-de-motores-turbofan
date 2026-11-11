@@ -1,0 +1,7 @@
+.venv/
+dados/motores.db
+dados/modelo_rul.joblib
+__pycache__/
+.env
+notas-entrevista.md
+.DS_Store
