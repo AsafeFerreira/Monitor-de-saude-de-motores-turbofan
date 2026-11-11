@@ -2,6 +2,8 @@
 
 Manutenção preditiva de motores de avião com **Python, SQL e IA generativa**.
 
+**[▶ Abrir o painel online](https://asafeferreira.github.io/Monitor-de-saude-de-motores-turbofan/)** (roda direto no navegador; a primeira visita leva de 15 a 30 segundos)
+
 O projeto usa o conjunto público **C-MAPSS** da NASA: leituras de 21 sensores de
 100 motores turbofan **simulados**, ciclo a ciclo, desde o motor novo até a falha.
 O objetivo é prever a **vida útil restante (RUL)** de cada motor, ou seja, quantos
