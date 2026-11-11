@@ -23,7 +23,7 @@ um jeito útil para quem planeja a manutenção.
 | 2 | Análise exploratória: quais sensores mudam quando o motor degrada | pandas, matplotlib | ✅ |
 | 3 | Modelo que prevê quantos ciclos faltam para a falha | scikit-learn | ✅ |
 | 4 | Painel com os motores em risco | Streamlit | ✅ |
-| 5 | Assistente de IA que responde em português consultando o banco | API da Anthropic | ⏳ |
+| 5 | Assistente de IA que responde em português consultando o banco | API de LLM (ex.: Claude) | 💡 proposta ([ver abaixo](#próximo-passo-proposta-assistente-de-ia-generativa)) |
 
 ## Como rodar
 
@@ -114,3 +114,29 @@ Subconjunto **FD001**: 100 motores no treino (vida de 128 a 362 ciclos, média d
 
 Referência: A. Saxena e K. Goebel (2008). *Turbofan Engine Degradation Simulation
 Data Set*. NASA Ames Prognostics Data Repository.
+
+## Próximo passo (proposta): assistente de IA generativa
+
+Este é um projeto pessoal, sem orçamento para uma API de IA paga, então a etapa 5 ficou como
+**proposta**. A ideia está pronta para ser implementada quando houver uma chave de API, por
+exemplo num projeto dentro de uma empresa.
+
+**Como funcionaria:**
+
+1. O usuário pergunta em português, por exemplo: *"Quais motores precisam de manutenção nos
+   próximos 20 ciclos?"* ou *"Por que o motor 34 está crítico?"*
+2. Um modelo de linguagem (LLM), como o Claude, recebe a pergunta e uma ferramenta para
+   consultar o banco de dados.
+3. O modelo escreve a consulta SQL, o sistema a executa (somente leitura) e devolve os números.
+4. O modelo responde em português usando esses números.
+
+**Por que isso importa:** a IA **não inventa números**. Ela responde a partir dos dados que a
+própria empresa fornece, e cada resposta pode mostrar a consulta usada, para alguém conferir.
+Assim, quem planeja a manutenção pode fazer perguntas sem saber SQL.
+
+**Cuidados para implementar:**
+
+- A chave da API fica num servidor, nunca no navegador do usuário.
+- O banco é aberto em modo somente leitura, para a IA não conseguir alterar dados.
+- Limite de perguntas e de gasto mensal, configurado no console do provedor da API.
+

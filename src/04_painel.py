@@ -263,5 +263,20 @@ def main() -> None:
         mae = (previsoes["rul_previsto"] - previsoes["rul_real"]).abs().mean()
         st.write(f"Erro médio do modelo nos 100 motores de teste: **{mae:.1f} ciclos**.")
 
+    # --- Próximo passo: assistente de IA (proposta, não implementado) ---
+    st.divider()
+    with st.expander("💡 Próximo passo (proposta): assistente de IA generativa"):
+        st.markdown(
+            "Este é um projeto pessoal, sem orçamento para uma API de IA paga, então o assistente "
+            "ficou como **proposta**. Com uma chave de API (por exemplo, num projeto dentro de uma "
+            "empresa), daria para perguntar em português:\n\n"
+            "- *\"Quais motores precisam de manutenção nos próximos 20 ciclos?\"*\n"
+            "- *\"Por que o motor 34 está crítico?\"*\n\n"
+            "Um modelo de linguagem (LLM) escreveria a consulta SQL, o sistema a executaria "
+            "(somente leitura) e o modelo responderia com os números reais do banco. "
+            "**A IA não inventa números:** ela responde a partir dos dados que a própria empresa "
+            "fornece, e cada resposta pode mostrar a consulta usada, para alguém conferir."
+        )
+
 
 main()
