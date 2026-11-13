@@ -1,6 +1,6 @@
 # Monitor de Saúde de Motores Turbofan
 
-Manutenção preditiva de motores de avião com **Python, SQL e IA generativa**.
+Manutenção preditiva de motores de avião com **Python, SQL e machine learning**.
 
 **[▶ Abrir o painel online](https://asafeferreira.github.io/Monitor-de-saude-de-motores-turbofan/)** (roda direto no navegador; a primeira visita leva de 15 a 30 segundos)
 
